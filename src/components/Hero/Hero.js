@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import FaArrowDown from "react-icons/lib/fa/arrow-down";
+import FaArrowDown from "react-icons/lib/fa/angle-double-down";
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
@@ -10,13 +10,13 @@ const Hero = props => {
     <React.Fragment>
       <section className="hero">
         <h1>
-          This is a demo site of&nbsp;the <strong>heroBlog</strong> GatsbyJS starter
+        Articles, webcasts and tutorials <br />to level up your skills on javascript frameworks and full stack development.
         </h1>
+        <br />
         <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
         </button>
       </section>
-
       {/* --- STYLES --- */}
       <style jsx>{`
         .hero {
@@ -36,8 +36,8 @@ const Hero = props => {
 
         h1 {
           text-align: center;
-          font-size: ${theme.hero.h1.size};
-          margin: ${theme.space.stack.l};
+          font-size: 0.8em;
+          margin: 5px 6px 6px 0;
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
           text-remove-gap: both 0 "Open Sans";
@@ -60,7 +60,7 @@ const Hero = props => {
         }
 
         button {
-          background: ${theme.background.color.brand};
+          background: #a3a3a3;
           border: 0;
           border-radius: 50%;
           font-size: ${theme.font.size.m};
@@ -101,7 +101,7 @@ const Hero = props => {
 
           h1 {
             max-width: 90%;
-            font-size: ${`calc(${theme.hero.h1.size} * 1.3)`};
+            font-size: ${`calc(${theme.hero.h1.size} * 1.0)`};
           }
 
           button {
@@ -116,7 +116,7 @@ const Hero = props => {
 
           h1 {
             max-width: 80%;
-            font-size: ${`calc(${theme.hero.h1.size} * 1.5)`};
+            font-size: ${`calc(${theme.hero.h1.size} * 1.0)`};
           }
 
           button {

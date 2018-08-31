@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import config from "../../../content/meta/config";
-import Img from "gatsby-image";
 
 const Author = (props, data) => {
   const { note, theme } = props;
@@ -11,7 +10,7 @@ const Author = (props, data) => {
     <React.Fragment>
       <div className="author">
         <div className="avatar">
-          <Img />
+        {<img />}
         </div>
         <div className="note" dangerouslySetInnerHTML={{ __html: note }} />
       </div>
@@ -35,7 +34,9 @@ const Author = (props, data) => {
           width: 50px;
         }
         .avatar img {
-          width: 100%;
+            width: 100%;
+            height: 100%;
+            background-image: url(/screens/sh.jpg);
         }
         .note {
           font-size: 0.9em;

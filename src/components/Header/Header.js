@@ -69,7 +69,7 @@ class Header extends React.Component {
           .header {
             align-items: center;
             justify-content: center;
-            background-color: ${theme.color.neutral.white};
+            background-color: #f7f7f7;
             display: flex;
             height: ${theme.header.height.default};
             position: relative;
@@ -112,10 +112,10 @@ class Header extends React.Component {
             border-radius: 65% 75%;
             border: 1px solid #eee;
             display: inline-block;
-            height: 44px;
+            height: 60px;
             margin: ${theme.space.inline.default};
             overflow: hidden;
-            width: 44px;
+            width: 60px;
             transition: all 0.5s;
 
             .homepage & {
@@ -125,8 +125,8 @@ class Header extends React.Component {
 
             img {
               width: 100%;
-              height: 100%;
-              background-image: url(/screens/avatar.jpg);
+              height: 101%;
+              background-image: url(/screens/sh.jpg);
             }
           }
 
@@ -170,7 +170,7 @@ class Header extends React.Component {
           @from-width desktop {
             .header {
               align-items: center;
-              background-color: ${theme.color.neutral.white};
+              background-color: #f7f7f7;
               display: flex;
               position: absolute;
               top: 0;
@@ -180,7 +180,7 @@ class Header extends React.Component {
 
               &.fixed {
                 height: ${theme.header.height.fixed};
-                background-color: ${theme.color.neutral.white};
+                background-color: #f7f7f7;
                 left: 0;
                 padding: 0 ${theme.space.m};
                 position: fixed;
@@ -218,10 +218,7 @@ class Header extends React.Component {
             .logo {
               margin: ${theme.space.inline.default};
 
-              .fixed & {
-                height: 36px;
-                width: 36px;
-              }
+             
 
               .header.homepage:not(.fixed) & {
                 border: none;
@@ -260,7 +257,7 @@ export default Header;
 
 export const query = graphql`
   query GatsbyImageSampleQuery {
-    file(relativePath: { eq: "images/jpg/avatar.jpg" }) {
+    file(relativePath: { eq: "images/jpg/sh.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
