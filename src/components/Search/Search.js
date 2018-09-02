@@ -5,7 +5,6 @@ import { InstantSearch, SearchBox, Hits, Stats, Pagination } from "react-instant
 import Hit from "./Hit";
 
 const Search = props => {
-  const { algolia, theme } = props;
 
   return (
     <React.Fragment>
@@ -74,8 +73,6 @@ const Search = props => {
 };
 
 Search.propTypes = {
-  algolia: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
 };
 
 export default Search;
