@@ -8,32 +8,44 @@ import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
 
-import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
-
 const SearchPage = props => {
-  const {
-    data: {
-      site: {
-        siteMetadata: { algolia, facebook }
+  console.log('property');
+  console.log(props);
+
+    const {
+      data: {
+        posts: { edges: posts },
+        site: {
+          siteMetadata: { facebook }
+        }
       }
+    } = props;
+
+    // Create category list
+    const categories = {};
+    posts.forEach(edge => {
+      const {
+        node: {
+          frontmatter: { category }
+        }
+      } = edge;
+
+      if (category && category != null) {
+        if (!categories[category]) {
+          categories[category] = [];
+        }
+        categories[category].push(edge);
+      }
+    });
+
+    const categoryList = [];
+
+    for (var key in categories) {
+      categoryList.push([key, categories[key]]);
     }
-  } = props;
 
   return (
     <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <Article theme={theme}>
-            <div className="icon">
-              <AlgoliaIcon />
-            </div>
-
-            <Search algolia={algolia} theme={theme} />
-          </Article>
-        )}
-      </ThemeContext.Consumer>
-
-      <Seo facebook={facebook} />
 
       {/* --- STYLES --- */}
       <style jsx>{`
@@ -57,15 +69,38 @@ SearchPage.propTypes = {
 export default SearchPage;
 
 //eslint-disable-next-line no-undef
-export const query = graphql`
+export const guery = graphql`
   query SearchQuery {
+    posts: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
+      sort: { fields: [fields___prefix], order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+            prefix
+          }
+          frontmatter {
+            title
+            category
+            author
+            cover {
+              children {
+                ... on ImageSharp {
+                  sizes(maxWidth: 800, maxHeight: 360) {
+                    ...GatsbyImageSharpSizes_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
-        algolia {
-          appId
-          searchOnlyApiKey
-          indexName
-        }
         facebook {
           appId
         }

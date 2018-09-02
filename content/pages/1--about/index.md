@@ -2,26 +2,28 @@
 title: About
 ---
 
-This is a demo site of the [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJS](https://www.gatsbyjs.org/) starter.
+Scriptzhub is a community blog, which is run and supported by several individuals. We have a strong team of committed authors who post regularly and also a wide variety of articles from a diverse range of guest authors.
 
-### Features:
+### What We Write About
 
-* Easy editable content in **Markdown** files (posts, pages and parts)
-* **CSS** with `styled-jsx` and `PostCSS`
-* **SEO** (sitemap generation, robot.txt, meta and OpenGraph Tags)
-* **Social** sharing (Twitter, Facebook, Google, LinkedIn)
-* **Comments** (Facebook)
-* **Images** lazy loading and `webp` support (gatsby-image)
-* Post **categories** (category based post list)
-* Full text **searching** (Algolia)
-* **Contact** form (Netlify form handling)
-* **RSS** feed
-* 100% **PWA** (manifest.webmanifest, offline support, favicons)
-* Google **Analytics**
-* App **favicons** generator (node script)
-* Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
-* React **v.16** (gatsby-plugin-react-next)
-* **Components** lazy loading (social sharing)
-* **ESLint** (google config)
-* **Prettier** code styling
-* Webpack `BundleAnalyzerPlugin`
+Web technology is our core area of writing, however we also post about dot net, cloud computing, devops, science, database and more. A full list of the topics we cover can be found in listing below.
+
+
+### Key technologies:
+
+* **React.JS**
+* **Redux**
+* **Webpack**
+* **Angular**
+* **Microservices**
+* **AWS**
+* **Javascript**
+* **Node.JS**
+* **Dot-Net**
+* **MongoDB**
+* **Responsive Web Design**
+
+### Our Structure
+
+Scriptzhub is not a business or a company. We are an organisation of people working together to provide a great blog. More information on the people who contribute to the site can be found on the our Authors page.
+

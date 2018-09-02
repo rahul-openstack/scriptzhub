@@ -1,11 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FacebookProvider, { Comments as FBComments } from "react-facebook";
+import { DiscussionEmbed } from "disqus-react";
 
 import config from "../../../content/meta/config";
 
 const Comments = props => {
-  const { facebook, slug, theme } = props;
+  const { facebook, slug, theme, title } = props;
+  const disqusShortname = "disqus_47Z6ECQno0";
+  const disqusConfig = {
+    identifier: slug,
+    title: title,
+  };
 
   return (
     <React.Fragment>
@@ -13,6 +19,8 @@ const Comments = props => {
         <FacebookProvider appId={facebook.appId}>
           <FBComments href={`${config.siteUrl}${slug}`} width="100%" colorscheme="light" />
         </FacebookProvider>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+
       </div>
 
       {/* --- STYLES --- */}
