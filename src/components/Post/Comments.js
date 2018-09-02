@@ -7,7 +7,7 @@ import config from "../../../content/meta/config";
 
 const Comments = props => {
   const { facebook, slug, theme, title } = props;
-  const disqusShortname = "disqus_47Z6ECQno0";
+  const disqusShortname = "Scriptzhub";
   const disqusConfig = {
     identifier: slug,
     title: title,
